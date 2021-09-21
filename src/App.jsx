@@ -1,13 +1,16 @@
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
-import AllContributors from "./components/allcontributors";
-import Top3Space from "./components/top3space";
+import LeaderBoard from "./pages/leaderboard";
 
 function App() {
   return (
-    <div className="bg-gray-900 w-screen min-h-screen">
-      <Top3Space />
-      <AllContributors />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <LeaderBoard />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
