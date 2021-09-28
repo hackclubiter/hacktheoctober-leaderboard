@@ -32,7 +32,7 @@ const ContributorCardRegular = ({ user }) => {
               {user.totalCommits}
             </div>
             <div className="text-white text-sm font-thin">
-              {user.totalRepos}
+              &nbsp;{user.totalRepos}
             </div>
           </div>
         </div>

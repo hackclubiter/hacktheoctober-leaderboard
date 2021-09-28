@@ -43,15 +43,19 @@ const getTotalCommits = (username) => {
         .get(`${GITHUB_API_URL}users/${username}/events?page=${no}`)
         .then((res) => {
           let data = res.data;
-          if (new Date(data[0].created_at).getMonth() >= 8) {
-            commits.push(...data);
-            commits = commits.filter(
-              (commit) =>
-                commit.type === "PushEvent" &&
-                new Date(commit.created_at).getMonth() >= 8
-            );
-            if (new Date(data[data.length - 1].created_at).getMonth() >= 8) {
-              req(no + 1);
+          if (data.length) {
+            if (new Date(data[0].created_at).getMonth() >= 8) {
+              commits.push(...data);
+              commits = commits.filter(
+                (commit) =>
+                  commit.type === "PushEvent" &&
+                  new Date(commit.created_at).getMonth() >= 8
+              );
+              if (new Date(data[data.length - 1].created_at).getMonth() >= 8) {
+                req(no + 1);
+              } else {
+                resolve(commits);
+              }
             } else {
               resolve(commits);
             }
