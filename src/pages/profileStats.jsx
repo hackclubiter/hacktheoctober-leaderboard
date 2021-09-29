@@ -88,8 +88,8 @@ const ProfileStats = () => {
           {user.totalCommits.length ? (
             user.totalCommits.map((contrib, idx1) => {
               return (
-                <div key={idx1} className="w-full flex flex-col">
-                  <div className="w-full bg-white p-2 text-lg font-bold">
+                <div key={idx1} className="w-full border flex flex-col">
+                  <div className="w-full bg-gray-800 p-2 text-white text-lg font-bold">
                     {contrib.repo.url.slice(29, contrib.repo.url.length)}
                   </div>
                   <div className="w-full text-white flex flex-col">
@@ -103,7 +103,7 @@ const ProfileStats = () => {
                             29,
                             commit.url.length
                           )}`}
-                          className="w-full text-white border border-white hover:text-gray-50 hover:underline bg-gray-500 p-2"
+                          className="w-full text-white hover:text-gray-50 hover:underline  p-2"
                         >
                           {commit.message}
                         </a>
