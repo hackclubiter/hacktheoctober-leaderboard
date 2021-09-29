@@ -22,14 +22,16 @@ const ContributorCardRegular = ({ user }) => {
         </div>
         <div className="flex">
           <div className="h-full flex flex-col text-left">
-            <div className="text-white text-sm font-thin">Total Commits:</div>
+            <div className="text-white text-sm font-thin">
+              Total Contributions:
+            </div>
             <div className="text-white text-sm font-thin">
               Total repositories:
             </div>
           </div>
           <div className="h-full flex flex-col">
             <div className="text-white text-sm font-thin">
-              {user.totalCommits}
+              &nbsp;{user.totalCommits}
             </div>
             <div className="text-white text-sm font-thin">
               &nbsp;{user.totalRepos}

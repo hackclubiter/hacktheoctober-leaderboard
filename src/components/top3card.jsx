@@ -34,7 +34,9 @@ const Top3Card = ({ user, idx }) => {
         <div className="text-white text-2xl font-light">Insights ~</div>
         <div className="flex-1 flex py-8">
           <div className="w-2/3 h-full flex flex-col text-left">
-            <div className="text-white text-sm font-thin">Total Commits:</div>
+            <div className="text-white text-sm font-thin">
+              Total Contributions:
+            </div>
             <div className="text-white text-sm font-thin">
               Total repositories:
             </div>
