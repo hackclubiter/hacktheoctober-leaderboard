@@ -86,16 +86,17 @@ const ProfileStats = () => {
             All Contributions ({user.totalCommits.length})
           </div>
           {user.totalCommits.length ? (
-            user.totalCommits.map((contrib) => {
+            user.totalCommits.map((contrib, idx1) => {
               return (
-                <div className="w-full flex flex-col">
+                <div key={idx1} className="w-full flex flex-col">
                   <div className="w-full bg-white p-2 text-lg font-bold">
                     {contrib.repo.url.slice(29, contrib.repo.url.length)}
                   </div>
                   <div className="w-full text-white flex flex-col">
-                    {contrib.payload.commits.map((commit) => {
+                    {contrib.payload.commits.map((commit, idx2) => {
                       return (
                         <a
+                          key={idx2}
                           target="_blank"
                           rel="noreferrer"
                           href={`https://github.com/${commit.url.slice(

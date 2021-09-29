@@ -74,14 +74,16 @@ const MultiAxisLine = ({ totalCommits }) => {
         let createdDate = new Date(commit.created_at).getDate();
         let createdMonth = new Date(commit.created_at).getMonth();
         return (
-          createdDate === e.split("-")[2] && createdMonth === e.split("-")[1]
+          // eslint-disable-next-line
+          createdDate == e.split("-")[2] && createdMonth == e.split("-")[1]
         );
       });
 
       let filter = [];
 
       tdc.forEach((d) => {
-        if (filter.filter((j) => j.repo.id === d.repo.id).length === 0) {
+        // eslint-disable-next-line
+        if (filter.filter((j) => j.repo.id == d.repo.id).length == 0) {
           filter.push(d);
         }
       });
@@ -95,7 +97,7 @@ const MultiAxisLine = ({ totalCommits }) => {
     getTotalReposOnDay(totalCommits);
     return () => {};
     // eslint-disable-next-line
-  }, [commitData]);
+  }, []);
 
   return (
     <div
