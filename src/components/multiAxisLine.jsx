@@ -35,7 +35,7 @@ const MultiAxisLine = ({ totalCommits }) => {
   const getTotalCommitsOnDay = (totalCommits) => {
     let temp = (() => {
       let arr = [];
-      for (let index = 1; index <= 30; index++) {
+      for (let index = 1; index <= 31; index++) {
         arr.push(0);
       }
       return arr;
