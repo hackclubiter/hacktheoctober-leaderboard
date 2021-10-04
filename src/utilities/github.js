@@ -44,14 +44,14 @@ const getTotalCommits = (username) => {
         .then((res) => {
           let data = res.data;
           if (data.length) {
-            if (new Date(data[0].created_at).getMonth() >= 8) {
+            if (new Date(data[0].created_at).getMonth() >= 9) {
               commits.push(...data);
               commits = commits.filter(
                 (commit) =>
                   commit.type === "PushEvent" &&
-                  new Date(commit.created_at).getMonth() >= 8
+                  new Date(commit.created_at).getMonth() >= 9
               );
-              if (new Date(data[data.length - 1].created_at).getMonth() >= 8) {
+              if (new Date(data[data.length - 1].created_at).getMonth() >= 9) {
                 req(no + 1);
               } else {
                 resolve(commits);
